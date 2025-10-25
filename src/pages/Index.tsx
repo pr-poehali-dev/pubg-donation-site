@@ -42,28 +42,28 @@ const Index = () => {
     {
       id: 1,
       amount: 60,
-      price: 65,
+      price: 68,
       bonus: 0,
       popular: false
     },
     {
       id: 2,
       amount: 325,
-      price: 350,
+      price: 368,
       bonus: 25,
       popular: true
     },
     {
       id: 3,
       amount: 660,
-      price: 700,
+      price: 748,
       bonus: 60,
       popular: false
     },
     {
       id: 4,
       amount: 1800,
-      price: 1850,
+      price: 2040,
       bonus: 300,
       popular: false
     }
