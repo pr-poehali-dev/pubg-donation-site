@@ -138,6 +138,54 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-16 px-4 bg-gradient-to-r from-accent/20 via-primary/20 to-secondary/20 border-y-2 border-primary/30">
+        <div className="container mx-auto">
+          <Card className="border-2 border-primary bg-gradient-to-br from-card/95 to-primary/10 backdrop-blur-sm overflow-hidden relative">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary/30 to-accent/30 rounded-full blur-3xl -translate-y-32 translate-x-32" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-secondary/30 to-primary/30 rounded-full blur-3xl translate-y-32 -translate-x-32" />
+            
+            <CardHeader className="text-center relative z-10 pb-4">
+              <div className="inline-block mb-4">
+                <Badge className="text-lg px-6 py-2 bg-gradient-to-r from-accent via-primary to-secondary text-white animate-pulse">
+                  <Icon name="Sparkles" size={20} className="mr-2 inline" />
+                  Ограниченное предложение
+                </Badge>
+              </div>
+              <CardTitle className="text-4xl md:text-5xl font-bold mb-4">
+                Специальная акция!
+              </CardTitle>
+              <CardDescription className="text-xl text-foreground/90">
+                Купи 1000 UC и получи <span className="text-primary font-bold text-2xl">+200 UC</span> в подарок
+              </CardDescription>
+            </CardHeader>
+            
+            <CardContent className="text-center pb-6 relative z-10">
+              <div className="flex items-center justify-center gap-8 flex-wrap mb-6">
+                <div>
+                  <p className="text-sm text-muted-foreground mb-2">Обычная цена</p>
+                  <p className="text-3xl font-bold line-through text-muted-foreground">1050 ₽</p>
+                </div>
+                <Icon name="ArrowRight" size={32} className="text-primary" />
+                <div>
+                  <p className="text-sm text-muted-foreground mb-2">Цена по акции</p>
+                  <p className="text-5xl font-bold text-primary">850 ₽</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center justify-center gap-2 text-accent mb-6">
+                <Icon name="Clock" size={24} />
+                <p className="text-lg font-semibold">Акция действует до конца месяца</p>
+              </div>
+              
+              <Button size="lg" className="text-xl px-12 py-7 bg-gradient-to-r from-primary via-accent to-secondary hover:shadow-2xl hover:shadow-primary/50 hover:scale-105 transition-all">
+                <Icon name="Zap" size={24} className="mr-2" />
+                Купить со скидкой
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       <section className="py-24 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-fade-in">
