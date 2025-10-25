@@ -313,6 +313,165 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-24 px-4 bg-gradient-to-b from-background to-card/50">
+        <div className="container mx-auto">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Отзывы наших клиентов
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Более 50,000 довольных игроков уже пополнили UC через нас
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            <Card className="border-2 border-primary/30 bg-gradient-to-br from-card to-primary/5 hover:border-primary hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 hover:scale-105 animate-fade-in">
+              <CardHeader>
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-xl font-bold">
+                    А
+                  </div>
+                  <div>
+                    <CardTitle className="text-lg">Алексей М.</CardTitle>
+                    <div className="flex gap-1 mt-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Icon key={i} name="Star" size={16} className="text-primary fill-primary" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  "UC пришли моментально! Очень удобно и быстро. Цены ниже чем в официальном магазине. Буду пользоваться постоянно!"
+                </p>
+                <p className="text-sm text-primary mt-4 font-semibold">Купил 660 UC + бонус</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-secondary/30 bg-gradient-to-br from-card to-secondary/5 hover:border-secondary hover:shadow-xl hover:shadow-secondary/20 transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '100ms' }}>
+              <CardHeader>
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-xl font-bold">
+                    М
+                  </div>
+                  <div>
+                    <CardTitle className="text-lg">Мария К.</CardTitle>
+                    <div className="flex gap-1 mt-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Icon key={i} name="Star" size={16} className="text-primary fill-primary" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  "Уже третий раз покупаю здесь! Поддержка отвечает быстро, всё безопасно. Рекомендую всем своим друзьям из клана."
+                </p>
+                <p className="text-sm text-secondary mt-4 font-semibold">Постоянный клиент</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-accent/30 bg-gradient-to-br from-card to-accent/5 hover:border-accent hover:shadow-xl hover:shadow-accent/20 transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '200ms' }}>
+              <CardHeader>
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-secondary flex items-center justify-center text-xl font-bold">
+                    Д
+                  </div>
+                  <div>
+                    <CardTitle className="text-lg">Дмитрий В.</CardTitle>
+                    <div className="flex gap-1 mt-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Icon key={i} name="Star" size={16} className="text-primary fill-primary" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  "Взял по акции 1000 UC с бонусом - просто огонь! Экономия реальная, а UC получил за 2 минуты. Топ сервис!"
+                </p>
+                <p className="text-sm text-accent mt-4 font-semibold">Купил акционный пакет</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-primary/30 bg-gradient-to-br from-card to-primary/5 hover:border-primary hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '300ms' }}>
+              <CardHeader>
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-xl font-bold">
+                    И
+                  </div>
+                  <div>
+                    <CardTitle className="text-lg">Иван С.</CardTitle>
+                    <div className="flex gap-1 mt-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Icon key={i} name="Star" size={16} className="text-primary fill-primary" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  "Сначала сомневался, но решил попробовать. Всё прошло отлично! UC зачислились мгновенно, никаких проблем."
+                </p>
+                <p className="text-sm text-primary mt-4 font-semibold">Купил 325 UC</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-secondary/30 bg-gradient-to-br from-card to-secondary/5 hover:border-secondary hover:shadow-xl hover:shadow-secondary/20 transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '400ms' }}>
+              <CardHeader>
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center text-xl font-bold">
+                    Е
+                  </div>
+                  <div>
+                    <CardTitle className="text-lg">Елена Т.</CardTitle>
+                    <div className="flex gap-1 mt-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Icon key={i} name="Star" size={16} className="text-primary fill-primary" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  "Купила UC в подарок другу на день рождения. Процесс простой, цены приятные. Он был в восторге!"
+                </p>
+                <p className="text-sm text-secondary mt-4 font-semibold">Купила 1800 UC</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-accent/30 bg-gradient-to-br from-card to-accent/5 hover:border-accent hover:shadow-xl hover:shadow-accent/20 transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '500ms' }}>
+              <CardHeader>
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center text-xl font-bold">
+                    Р
+                  </div>
+                  <div>
+                    <CardTitle className="text-lg">Роман Л.</CardTitle>
+                    <div className="flex gap-1 mt-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Icon key={i} name="Star" size={16} className="text-primary fill-primary" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  "Лучший сервис для пополнения UC! Пользуюсь уже полгода, ни разу не подвели. Всем советую!"
+                </p>
+                <p className="text-sm text-accent mt-4 font-semibold">VIP клиент</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       <footer className="py-12 px-4 bg-card/50 border-t border-border">
         <div className="container mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
