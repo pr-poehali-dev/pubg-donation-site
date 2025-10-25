@@ -2,8 +2,42 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
 import { Badge } from "@/components/ui/badge";
+import { useState, useEffect } from "react";
 
 const Index = () => {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  useEffect(() => {
+    const endDate = new Date();
+    endDate.setMonth(endDate.getMonth() + 1);
+    endDate.setDate(0);
+    endDate.setHours(23, 59, 59, 999);
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = endDate.getTime() - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        return;
+      }
+
+      setTimeLeft({
+        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((distance % (1000 * 60)) / 1000)
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
   const donatPackages = [
     {
       id: 1,
@@ -172,9 +206,30 @@ const Index = () => {
                 </div>
               </div>
               
-              <div className="flex items-center justify-center gap-2 text-accent mb-6">
-                <Icon name="Clock" size={24} />
-                <p className="text-lg font-semibold">Акция действует до конца месяца</p>
+              <div className="mb-6">
+                <div className="flex items-center justify-center gap-2 text-accent mb-4">
+                  <Icon name="Clock" size={24} />
+                  <p className="text-lg font-semibold">До конца акции осталось:</p>
+                </div>
+                
+                <div className="flex gap-4 justify-center flex-wrap">
+                  <div className="bg-card/80 backdrop-blur-sm border-2 border-primary/30 rounded-lg p-4 min-w-[80px]">
+                    <div className="text-3xl font-bold text-primary">{timeLeft.days}</div>
+                    <div className="text-sm text-muted-foreground">Дней</div>
+                  </div>
+                  <div className="bg-card/80 backdrop-blur-sm border-2 border-primary/30 rounded-lg p-4 min-w-[80px]">
+                    <div className="text-3xl font-bold text-primary">{timeLeft.hours}</div>
+                    <div className="text-sm text-muted-foreground">Часов</div>
+                  </div>
+                  <div className="bg-card/80 backdrop-blur-sm border-2 border-primary/30 rounded-lg p-4 min-w-[80px]">
+                    <div className="text-3xl font-bold text-primary">{timeLeft.minutes}</div>
+                    <div className="text-sm text-muted-foreground">Минут</div>
+                  </div>
+                  <div className="bg-card/80 backdrop-blur-sm border-2 border-primary/30 rounded-lg p-4 min-w-[80px]">
+                    <div className="text-3xl font-bold text-primary">{timeLeft.seconds}</div>
+                    <div className="text-sm text-muted-foreground">Секунд</div>
+                  </div>
+                </div>
               </div>
               
               <Button size="lg" className="text-xl px-12 py-7 bg-gradient-to-r from-primary via-accent to-secondary hover:shadow-2xl hover:shadow-primary/50 hover:scale-105 transition-all">
