@@ -241,13 +241,27 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-24 px-4">
-        <div className="container mx-auto">
+      <section 
+        className="py-24 px-4 relative overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(rgba(10, 10, 15, 0.92), rgba(10, 10, 15, 0.92)), url('https://cdn.poehali.dev/projects/1fc88443-d6df-43ef-906d-5d5b953c7fec/files/8c1b9b81-eeb0-4183-bbad-09faf0b04daf.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-secondary/10" />
+        
+        <div className="container mx-auto relative z-10">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <Badge className="text-lg px-6 py-2 bg-gradient-to-r from-primary to-accent text-black font-bold mb-6">
+              <Icon name="ShoppingCart" size={20} className="mr-2 inline" />
+              Магазин UC
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-[0_0_20px_rgba(255,149,0,0.5)]">
               Пакеты донатов
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-foreground/90">
               Выбери подходящий пакет и получи бонусные UC
             </p>
           </div>
@@ -256,10 +270,10 @@ const Index = () => {
             {donatPackages.map((pkg, index) => (
               <Card 
                 key={pkg.id}
-                className={`relative border-2 transition-all duration-300 hover:scale-105 animate-scale-in group ${
+                className={`relative border-2 transition-all duration-300 hover:scale-110 hover:-translate-y-2 animate-scale-in group ${
                   pkg.popular 
-                    ? 'border-primary shadow-lg shadow-primary/30 bg-gradient-to-b from-primary/10 to-card' 
-                    : 'border-border hover:border-secondary bg-card/80 backdrop-blur-sm'
+                    ? 'border-primary shadow-2xl shadow-primary/50 bg-gradient-to-b from-primary/20 to-card/95 backdrop-blur-md' 
+                    : 'border-primary/30 hover:border-secondary shadow-lg shadow-primary/20 bg-card/95 backdrop-blur-md'
                 }`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
